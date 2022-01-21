@@ -30,15 +30,9 @@ func main() {
 	fmt.Printf("SumIntsOrFloats inferred: %v\n", SumIntsOrFloats(ints))
 	fmt.Printf("SumIntsOrFloats inferred: %v\n", SumIntsOrFloats(floats))
 	
-	// Call generic function with explicit "subtype" params
+	// Same idea with new func SumNumbers
 	fmt.Printf("SumNumbers explicit: %v\n", SumNumbers[string, int64](ints))
 	fmt.Printf("SumNumbers explicit: %v\n", SumNumbers[string, float64](floats))
-	// You can omit type arguments in calling code when the Go compiler
-	// can infer the types you want to use. The compiler infers type
-	// arguments from the types of function arguments. Note that this
-	// isn’t always possible. For example, if you needed to call a
-	// generic function that had no arguments, you would need to include
-	// the type arguments in the function call.
 	fmt.Printf("SumNumbers inferred: %v\n", SumNumbers(ints))
 	fmt.Printf("SumNumbers inferred: %v\n", SumNumbers(floats))
 }
